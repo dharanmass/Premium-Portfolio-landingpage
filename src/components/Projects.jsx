@@ -74,7 +74,7 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-20 relative">
+        <section id="projects" className="py-12 md:py-20 relative">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

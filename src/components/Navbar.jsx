@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
+import logo from '../assets/images/logo.svg';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -29,7 +31,7 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <a href="#" className="block w-12 h-12">
-                    <img src="/src/assets/images/logo.svg" alt="Dharanidharan Logo" className="w-full h-full object-contain" />
+                    <img src={logo} alt="Dharanidharan Logo" className="w-full h-full object-contain" />
                 </a>
 
                 {/* Desktop Menu */}

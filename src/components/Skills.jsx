@@ -7,7 +7,7 @@ const skills = [
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-20 overflow-hidden bg-secondary/20">
+        <section id="skills" className="py-12 md:py-20 overflow-hidden bg-secondary/20">
             <div className="container mx-auto px-6 mb-12 text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const Skills = () => {
                     {[...skills, ...skills, ...skills].map((skill, index) => (
                         <span
                             key={index}
-                            className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-500 opacity-50 hover:opacity-100 hover:from-accent hover:to-purple-500 transition-all duration-300 cursor-default"
+                            className="text-3xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-500 opacity-50 hover:opacity-100 hover:from-accent hover:to-purple-500 transition-all duration-300 cursor-default"
                         >
                             {skill}
                         </span>
@@ -42,7 +42,7 @@ const Skills = () => {
                     {[...skills, ...skills, ...skills].map((skill, index) => (
                         <span
                             key={index}
-                            className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-500 opacity-50 hover:opacity-100 hover:from-accent hover:to-purple-500 transition-all duration-300 cursor-default"
+                            className="text-3xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-500 opacity-50 hover:opacity-100 hover:from-accent hover:to-purple-500 transition-all duration-300 cursor-default"
                         >
                             {skill}
                         </span>

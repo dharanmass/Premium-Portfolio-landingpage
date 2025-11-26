@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { User, Code, Zap, Cpu, Globe, Palette } from 'lucide-react';
 import { useRef } from 'react';
 
+import profileImg from '../assets/images/profile.jpg';
+
 const FloatingOrb = ({ delay, className }) => (
     <motion.div
         animate={{
@@ -36,7 +38,7 @@ const TechBadge = ({ icon: Icon, label, delay, x, y }) => (
             }
         }}
         animate={{ y: [0, -10, 0] }}
-        className="absolute flex items-center gap-2 px-4 py-2 bg-secondary/80 backdrop-blur-md border border-white/10 rounded-full shadow-lg z-30"
+        className="absolute hidden md:flex items-center gap-2 px-4 py-2 bg-secondary/80 backdrop-blur-md border border-white/10 rounded-full shadow-lg z-30"
         style={{ left: x, top: y }}
         whileHover={{ scale: 1.1, borderColor: "#6366f1" }}
     >
@@ -57,10 +59,10 @@ const About = () => {
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
 
     return (
-        <section id="about" ref={containerRef} className="py-32 relative overflow-hidden min-h-screen flex items-center">
+        <section id="about" ref={containerRef} className="py-20 md:py-32 relative overflow-hidden min-h-screen flex items-center">
             {/* Dynamic Background */}
-            <FloatingOrb delay={0} className="w-[500px] h-[500px] bg-purple-600/20 -top-20 -left-20" />
-            <FloatingOrb delay={2} className="w-[400px] h-[400px] bg-accent/20 bottom-0 right-0" />
+            <FloatingOrb delay={0} className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-purple-600/20 -top-20 -left-20" />
+            <FloatingOrb delay={2} className="w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-accent/20 bottom-0 right-0" />
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
@@ -71,12 +73,12 @@ const About = () => {
                         style={{ y: y1, rotate }}
                         className="w-full lg:w-1/2 relative h-[600px] flex items-center justify-center"
                     >
-                        <div className="relative w-[450px] h-[450px] group">
+                        <div className="relative w-full max-w-[450px] aspect-square group">
                             {/* Profile Image Container */}
-                            <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-slate-800/50 shadow-2xl z-20 group-hover:scale-105 transition-transform duration-500">
+                            <div className="relative w-full h-full border-4 border-slate-800/50 shadow-2xl z-20 group-hover:scale-105 transition-transform duration-500">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-purple-500/20 mix-blend-overlay z-10" />
                                 <img
-                                    src="/src/assets/images/profile.jpg"
+                                    src={profileImg}
                                     alt="Dharanidharan"
                                     className="w-full h-full object-cover"
                                 />
