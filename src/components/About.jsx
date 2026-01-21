@@ -104,7 +104,7 @@ const About = () => {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-6xl md:text-8xl font-bold mb-8 opacity-10 absolute -top-20 -right-20 pointer-events-none select-none">
-                                ABOUT
+                                ABOUTS
                             </h2>
 
                             <div className="flex items-center gap-4 mb-6">
