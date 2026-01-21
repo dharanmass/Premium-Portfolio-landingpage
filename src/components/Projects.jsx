@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import carRentalImg from '../assets/car-rental-project.png';
 import dashboardImg from '../assets/dashboard.png';
 import phishingImg from '../assets/AI.jpg';
@@ -68,13 +68,25 @@ const ProjectCard = ({ project, index }) => {
                     ))}
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                     <a
                         href={project.links.demo}
                         className="flex items-center gap-2 text-sm font-medium text-white hover:text-accent transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <ExternalLink size={16} /> View Project
                     </a>
+                    {project.links.github && project.links.github !== '#' && (
+                        <a
+                            href={project.links.github}
+                            className="flex items-center gap-2 text-sm font-medium text-white hover:text-accent transition-colors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Github size={16} /> GitHub
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>
@@ -97,7 +109,7 @@ const Projects = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} index={index} />
                     ))}
